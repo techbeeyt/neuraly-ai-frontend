@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const AgentCard = () => {
   return (
@@ -43,11 +44,11 @@ const AgentCard = () => {
         <span className="text-gray-500 text-sm">Chat Sessions</span>
       </div>
 
-      <div>
+      <Link href="/chat/:agent-id:/:session-id:">
         <Button className="w-28">
           <span className="font-semibold">Open</span>
         </Button>
-      </div>
+      </Link>
     </div>
   );
 };

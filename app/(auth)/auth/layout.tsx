@@ -1,6 +1,6 @@
+import AuthWrapper from "@/components/dashboard/auth-wrapper";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import AuthWrapper from "./auth-wrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 

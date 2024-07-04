@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import ProgressBarProvider from "@/components/providers/progress-bar";
 import SessionProviderWrapper from "@/components/providers/session-provider";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} scroll-smooth`}>
         <SessionProviderWrapper>
-          <ProgressBarProvider>{children}</ProgressBarProvider>
+          <ProgressBarProvider>
+            <Suspense>{children}</Suspense>
+          </ProgressBarProvider>
         </SessionProviderWrapper>
       </body>
     </html>

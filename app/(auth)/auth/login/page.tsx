@@ -1,7 +1,7 @@
 import LoginForm from "@/components/auth/login-form";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { Suspense } from "react";
 
 const Page = () => {
   return (

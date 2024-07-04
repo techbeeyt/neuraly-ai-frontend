@@ -87,3 +87,57 @@
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-stone-400/80;
 }
+
+.chat::-webkit-scrollbar {
+  @apply w-1 h-2;
+}
+
+/* Database grid table styles */
+table.database-grid {
+  @apply table-auto;
+  @apply w-full;
+  @apply border-collapse;
+  @apply border-separate;
+  @apply border-spacing-0;
+  @apply border-border;
+  @apply text-left;
+  @apply text-sm;
+  @apply font-medium;
+  @apply text-foreground;
+  @apply overflow-x-auto;
+  @apply whitespace-nowrap;
+}
+
+table.database-grid th {
+  @apply border-border;
+  @apply border;
+  @apply border-collapse;
+  @apply border-white/70;
+  @apply px-4;
+  @apply py-2;
+}
+
+table.database-grid td {
+  @apply border-border;
+  @apply border;
+  @apply border-collapse;
+  @apply border-white/70;
+  @apply px-4;
+  @apply py-2;
+}
+
+.database-grid-container::-webkit-scrollbar {
+  @apply h-2;
+}
+
+.database-grid-container::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+.database-grid-container::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full;
+}
+
+.database-grid-container::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500/80;
+}

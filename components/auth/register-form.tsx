@@ -17,7 +17,7 @@ import { Input } from "@/components/ui/input";
 import { cms, http } from "@/lib/axios";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
@@ -41,7 +41,7 @@ const formSchema = z.object({
 export default function RegisterForm() {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-  const query = useSearchParams();
+  // const query = useSearchParams();
   const [cmsUserInfo, setCmsUserInfo] = useState(null);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -69,7 +69,7 @@ export default function RegisterForm() {
     }, [cmsUserInfo]) */
 
   async function handleRegister(values: z.infer<typeof formSchema>) {
-    try {
+    /* try {
       setIsLoading(true);
       formSchema.parse(values);
       const result = await http.post("/auth/register", values);
@@ -83,7 +83,7 @@ export default function RegisterForm() {
                     firstName: values.firstName,
                     lastName: values.lastName,
                     email: values.email
-                }); */
+                }); 
         // router.push('/auth/login');
         const loginResult: any = await signIn("credentials", {
           email: values.email,
@@ -116,7 +116,7 @@ export default function RegisterForm() {
       });
     } finally {
       setIsLoading(false);
-    }
+    } */
   }
 
   return (

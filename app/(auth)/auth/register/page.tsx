@@ -1,7 +1,7 @@
 "use client";
 
 import RegisterForm from "@/components/auth/register-form";
-import React from "react";
+import React, { Suspense } from "react";
 
 const Page = () => {
   return (
@@ -18,7 +18,9 @@ const Page = () => {
                 Start your 30-day free trial.
               </h5>
 
-              <RegisterForm />
+              <Suspense fallback={null}>
+                <RegisterForm />
+              </Suspense>
             </div>
           </div>
           <div className="2xl:px-5 p-3 flex flex-col lg:flex-row lg:justify-between justify-center items-center gap-2">

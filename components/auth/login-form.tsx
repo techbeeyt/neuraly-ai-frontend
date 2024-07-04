@@ -17,7 +17,7 @@ import {
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
 import { signIn } from "next-auth/react";
@@ -33,7 +33,7 @@ const formSchema = z.object({
 });
 
 export default function LoginForm() {
-  const query = useSearchParams();
+  // const query = useSearchParams();
   const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -44,7 +44,7 @@ export default function LoginForm() {
   const [isLoading, setIsLoading] = useState(false);
 
   async function handleLogin(values: z.infer<typeof formSchema>) {
-    try {
+    /* try {
       // Validate form values using the schema
       formSchema.parse(values);
       try {
@@ -91,7 +91,7 @@ export default function LoginForm() {
         description: "Something went wrong with the form.",
         position: "top-center",
       });
-    }
+    } */
   }
 
   return (
@@ -148,9 +148,7 @@ export default function LoginForm() {
           </div>
 
           <Link
-            href={`/auth/forgot-password${
-              query.has("redirect") ? `?redirect=${query.get("redirect")}` : ""
-            }`}
+            href={`/auth/forgot-password`}
             className="2xl:text-sm text-xs text-[#323333]"
           >
             Forgot password
@@ -183,12 +181,7 @@ export default function LoginForm() {
 
         <p className="text-center 2xl:text-sm lg:text-xs">
           Don&apos;t have an account?{" "}
-          <Link
-            href={`/auth/register${
-              query.has("redirect") ? `?redirect=${query.get("redirect")}` : ""
-            }`}
-            className="text-[#323333] font-medium"
-          >
+          <Link href={`/auth/register`} className="text-[#323333] font-medium">
             Sign up
           </Link>
         </p>

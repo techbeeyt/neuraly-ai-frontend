@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const DatabaseCard = () => {
   return (
@@ -40,8 +41,8 @@ const DatabaseCard = () => {
 
       <div className="flex justify-start items-center flex-wrap gap-y-4 gap-x-6 py-4">
         <div className="flex justify-center items-center">
-          <span className="text-xl font-semibold text-gray-600 mr-2">19</span>
-          <span className="text-gray-500 text-sm">Chat Sessions</span>
+          <span className="text-xl font-semibold text-gray-600 mr-2">2</span>
+          <span className="text-gray-500 text-sm">Tables</span>
         </div>
 
         <div className="flex justify-center items-center">
@@ -50,11 +51,11 @@ const DatabaseCard = () => {
         </div>
       </div>
 
-      <div>
+      <Link href="databases/:db-id:/open">
         <Button className="w-28">
           <span className="font-semibold">Open</span>
         </Button>
-      </div>
+      </Link>
     </div>
   );
 };

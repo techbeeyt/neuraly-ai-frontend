@@ -15,7 +15,9 @@ const LeftNavbar = () => {
         <Link
           href="/dashboard/agents"
           className={`${
-            pathname.startsWith("/dashboard/agents") ? "bg-gray-100" : ""
+            pathname.startsWith("/dashboard/agents")
+              ? "bg-gray-100"
+              : "hover:bg-gray-100"
           } flex justify-start items-center gap-2  px-4 py-2 rounded-lg`}
         >
           <div>
@@ -42,7 +44,9 @@ const LeftNavbar = () => {
         <Link
           href="/dashboard/databases"
           className={`${
-            pathname.startsWith("/dashboard/databases") ? "bg-gray-100" : ""
+            pathname.startsWith("/dashboard/databases")
+              ? "bg-gray-100"
+              : "hover:bg-gray-100"
           } flex justify-start items-center gap-2  px-4 py-2 rounded-lg`}
         >
           <div>
@@ -69,7 +73,9 @@ const LeftNavbar = () => {
         <Link
           href="/dashboard/subscriptions"
           className={`${
-            pathname.startsWith("/dashboard/subscriptions") ? "bg-gray-100" : ""
+            pathname.startsWith("/dashboard/subscriptions")
+              ? "bg-gray-100"
+              : "hover:bg-gray-100"
           } flex justify-start items-center gap-2  px-4 py-2 rounded-lg`}
         >
           <div>
