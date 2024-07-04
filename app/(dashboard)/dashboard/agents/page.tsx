@@ -1,3 +1,4 @@
+import AgentCard from "@/components/dashboard/agent-card";
 import { Button } from "@/components/ui/button";
 import React from "react";
 
@@ -27,11 +28,10 @@ const Page = () => {
       <div className="px-6 pt-6">
         <h1 className="text-xl font-semibold">Agents</h1>
       </div>
-      <div className="p-6 grid grid-cols-4 gap-6">
-        <div className="bg-gray-200 w-full h-[150px] rounded-3xl"></div>
-        <div className="bg-gray-200 w-full h-[150px] rounded-3xl"></div>
-        <div className="bg-gray-200 w-full h-[150px] rounded-3xl"></div>
-        <div className="bg-gray-200 w-full h-[150px] rounded-3xl"></div>
+      <div className="p-6 grid 3xl:grid-cols-5 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+        {Array.from({ length: 5 }).map((item, index) => {
+          return <AgentCard key={`card-${index}`} />;
+        })}
       </div>
     </div>
   );
