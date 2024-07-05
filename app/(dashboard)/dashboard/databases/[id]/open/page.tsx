@@ -67,11 +67,12 @@ const Page = () => {
             </tbody>
           </table>
         </div>
-        <div className="bg-white p-2 shadow-md border border-gray-200 rounded font-semibold text-sm whitespace-nowrap">
-          + Add column
+        <div className="md:bg-white bg-gray-200 md:h-auto h-[60vh] p-2 md:shadow-md shadow-sm border md:border-gray-200 border-gray-400 rounded font-semibold text-sm whitespace-nowrap flex justify-center items-center gap-2">
+          <span>+</span>{" "}
+          <span className="md:inline-block hidden">Add column</span>
         </div>
       </div>
-      <div className="bg-white w-[200px] flex justify-center items-center mt-1 p-2 shadow-md border border-gray-200 rounded font-semibold text-sm whitespace-nowrap">
+      <div className="md:bg-white bg-gray-200 md:w-[200px] w-[80vw] flex justify-center items-center mt-1 p-2 md:shadow-md shadow-sm border md:border-gray-200 border-gray-400 rounded font-semibold text-sm whitespace-nowrap">
         + Add Row
       </div>
     </div>

@@ -27,7 +27,7 @@ const Page = () => {
   return (
     <div className="relative">
       <div className="flex flex-col justify-center gap-4 items-center mb-[100px] pt-[24px]">
-        <div className="w-[700px] flex justify-start items-end flex-col gap-3">
+        <div className="lg:w-[700px] w-[90vw] flex justify-start items-end flex-col gap-3">
           <div className="flex justify-end items-center">
             <Image
               src="/images/profile-photo.png"
@@ -43,7 +43,7 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="w-[700px] flex justify-start items-start flex-col gap-3">
+        <div className="lg:w-[700px] w-[90vw] flex justify-start items-start flex-col gap-3">
           <div className="">
             <Image
               src="/icons/neuraly-icon.svg"
@@ -91,8 +91,8 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <div className="fixed left-[300px] bottom-0 right-0 h-[70px] bg-transparent flex justify-center items-start pt-1">
-        <div className="w-[700px] flex justify-center items-center gap-3">
+      <div className="fixed lg:left-[300px] left-0 bottom-0 right-0 h-[70px] bg-transparent flex justify-center items-start pt-1">
+        <div className="lg:w-[700px] w-[90vw] flex justify-center items-center gap-3">
           <Link
             href="/dashboard/databases/:db_id:/open"
             className="bg-white border border-gray-700 rounded-full w-[44px] h-[44px] flex justify-center items-center"

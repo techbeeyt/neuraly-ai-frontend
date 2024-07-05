@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const AgentCard = () => {
   return (
-    <div className={`bg-gray-200 w-full rounded-3xl px-5 py-6`}>
+    <div className={`bg-gray-200 w-full rounded-2xl px-5 py-6`}>
       <div className="flex justify-between items-start gap-2">
         <h1 className="font-medium">Patient Diagaram History</h1>
         <div>

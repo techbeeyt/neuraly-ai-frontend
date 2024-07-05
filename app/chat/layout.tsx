@@ -1,4 +1,6 @@
 import ChatLeftNavbar from "@/components/chat/left-nav";
+import MobileChatListBtn from "@/components/dashboard/mobile-chat-list-btn";
+import MobileMenuBtn from "@/components/dashboard/mobile-menu-btn";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -17,8 +19,9 @@ export default function layout({
   return (
     <>
       {/* Top Navigation Bar */}
-      <div className="bg-white w-full h-[72px] flex justify-start items-center gap-4 border-b-2 border-gray-200 fixed top-0 left-0 z-10">
-        <div className="pl-12">
+      <div className="bg-white w-full lg:h-[72px] h-[64px] flex lg:justify-start justify-center items-center gap-4 border-b-2 border-gray-200 fixed top-0 left-0 z-10">
+        <MobileChatListBtn />
+        <div className="lg:pl-12">
           <Link href={`/`}>
             <Image
               src="/images/logo/neuraly-logo.svg"
@@ -28,8 +31,7 @@ export default function layout({
             />
           </Link>
         </div>
-
-        <div className="ml-auto pr-12 flex justify-center items-center gap-6">
+        <div className="ml-auto pr-12 lg:flex hidden justify-center items-center gap-6">
           <Link href="/dashboard">
             <Button>
               <span className="font-semibold">Dashboard</span>
@@ -50,7 +52,9 @@ export default function layout({
       {/* Left Side Bar */}
       <ChatLeftNavbar />
       {/* Main Content */}
-      <div className="ml-[300px] mt-[72px]">{children}</div>
+      <div className="lg:ml-[300px] ml-0 lg:mt-[72px] mt-[64px]">
+        {children}
+      </div>
     </>
   );
 }

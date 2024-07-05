@@ -1,11 +1,17 @@
 "use client";
 
+import useMobileMenu from "@/hooks/useMobileMenu";
 import Image from "next/image";
 import React from "react";
 
 const ChatLeftNavbar = () => {
+  const mobileMenu = useMobileMenu();
   return (
-    <div className="fixed top-[72px] left-0 w-[300px] h-[calc(100vh-72px)] bg-[#f6f6f6] border-r-2 border-gray-200 overflow-auto chat">
+    <div
+      className={`fixed lg:top-[72px] top-[64px] lg:left-0 ${
+        mobileMenu.isChatListOpen ? "left-0" : "-left-full"
+      } w-[300px] lg:h-[calc(100vh-72px)] h-[calc(100vh-64px)] bg-[#f6f6f6] border-r-2 border-gray-200 overflow-auto chat z-[10000] transition-all duration-150 ease-in`}
+    >
       <div className="flex justify-center items-center py-4 border-b border-gray-300">
         <button className="bg-white border-2 border-gray-500 font-semibold rounded-md px-4 py-1.5 flex justify-center items-center gap-2">
           <span>New Session</span>

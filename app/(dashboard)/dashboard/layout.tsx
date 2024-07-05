@@ -1,4 +1,5 @@
 import LeftNavbar from "@/components/dashboard/left-navbar";
+import MobileMenuBtn from "@/components/dashboard/mobile-menu-btn";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,14 +17,17 @@ export default function layout({
   return (
     <div>
       {/* Top Navigation Bar */}
-      <div className="bg-white w-full h-[72px] flex justify-start items-center gap-4 border-b-2 border-gray-200 fixed top-0 left-0 z-10">
-        <div className="pl-12">
+      <div className="bg-white w-full md:h-[72px] h-[64px] flex md:justify-start justify-center items-center gap-4 border-b-2 border-gray-200 fixed top-0 left-0 z-10">
+        {/* Here the mobile Menu btn */}
+        <MobileMenuBtn />
+        <div className="md:pl-12">
           <Link href={`/`}>
             <Image
               src="/images/logo/neuraly-logo.svg"
               height={100}
               width={140}
               alt="neuraly.ai"
+              sizes="(max-width: 768px) 60px"
             />
           </Link>
         </div>
@@ -31,7 +35,9 @@ export default function layout({
       {/* Left Side Bar */}
       <LeftNavbar />
       {/* Main Content */}
-      <div className="ml-[240px] mt-[72px]">{children}</div>
+      <div className="md:ml-[240px] ml-0 md:mt-[72px] mt-[64px]">
+        {children}
+      </div>
     </div>
   );
 }
